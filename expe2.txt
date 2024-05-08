@@ -1,0 +1,77 @@
+package Exp2;
+
+
+
+import java.awt.event.MouseEvent; import java.awt.event.MouseListener; import javax.swing.JFrame; import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+
+public class Exp2 implements MouseListener { JFrame frame;
+
+JLabel messageLabel;
+
+
+
+public Exp2() {
+
+frame = new JFrame("Mouse Event Listener Example");
+
+frame.setSize(400, 300);
+
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+
+JPanel panel = new JPanel();
+
+
+
+messageLabel=new JLabel("Mouse events will be displayed here."); panel.add(messageLabel);
+
+
+frame.add(panel);
+
+frame.setVisible(true);
+
+panel.addMouseListener(this);
+
+} 
+public static void main(String[] args) { new Exp2();
+
+}
+
+
+
+public void mouseClicked(MouseEvent e) { messageLabel.setText("Mouse Clicked at X: " + e.getX() + ", Y: "
++	e.getY());
+
+}
+
+
+
+public void mousePressed(MouseEvent e) { messageLabel.setText("Mouse Pressed at X: " + e.getX() + ", Y: "
++	e.getY());
+
+}
+
+
+
+public void mouseReleased(MouseEvent e) { messageLabel.setText("Mouse Released at X: " + e.getX() + ", Y: "
++	e.getY());
+
+}
+
+
+
+public void mouseEntered(MouseEvent e) { messageLabel.setText("Mouse Entered the Panel");
+
+}
+
+
+
+public void mouseExited(MouseEvent e) { messageLabel.setText("Mouse Exited the Panel");
+
+}
+
+}
