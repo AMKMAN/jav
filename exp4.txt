@@ -1,0 +1,32 @@
+import java.sql.*; public class Expt04 {	public static void main(String[]
+
+args) throws ClassNotFoundException{
+
+
+String driver="com.mysql.cj.jdbc.Driver";
+
+String username="root";
+
+String password="sad159@#";
+
+String url= "jdbc:mysql://localhost:3306/college";
+
+
+
+try {
+
+Class.forName(driver);
+
+Connection con=DriverManager.getConnection(url,username,password); String q="insert into student
+values(101,'Ram','ram12@gmail.com',9874563262)"; Statement stmt =con.createStatement();
+
+stmt.execute(q);
+
+System.out.print("Data inserted successfully"); }catch (ClassNotFoundException | SQLException e) {
+
+e.printStackTrace();
+
+}
+
+}} 
+
